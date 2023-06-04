@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  # See https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
+  # for more info to see how to tune the lambda function configs based on your use case.
+  AppFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java8
+      Handler: com.test.APIDemoHandler::handleRequest
+      Timeout: 60
+      MemorySize: 512
+      CodeUri: ./target/sample-project.jar
+      Events:
+        HelloWorldApi:
+          Properties:
+            Method: POST
+            Path: /
+            RestApiId:
+              Ref: BasicAWSApiGateway
+          Type: Api
+
+  BasicAWSApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: Basic AWS Api Gateway
+      StageName: Staging
+
