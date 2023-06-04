@@ -11,7 +11,6 @@ public class Util {
     LambdaLogger logger = context.getLogger();
     // log execution details
     logger.log("ENVIRONMENT VARIABLES: " + gson.toJson(System.getenv()));
-    logger.log("CONTEXT: " + gson.toJson(context));
     // log event details
     logger.log("EVENT: " + gson.toJson(event));
     logger.log("EVENT TYPE: " + event.getClass().toString());

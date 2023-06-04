@@ -36,7 +36,7 @@ public class LambdaFunctionRequestHandler implements RequestHandler<APIGatewayV2
         response.setHeaders(headers);
 
         JsonObject responseBody = new JsonObject();
-        responseBody.addProperty("message", "New item created");
+        responseBody.addProperty("message", "New item created 3");
 
         response.setBody(responseBody.toString());
 
