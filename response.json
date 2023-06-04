@@ -1,1 +1,1 @@
-{"statusCode":200,"headers":{"x-custom-header":"my custom header value"},"body":"{\"message\":\"New item created\"}"}
+{"statusCode":200,"headers":{"Content-Type":"text/html","Access-Control-Allow-Origin":"*"},"body":"{\"id\":1,\"name\":\"Tom\"}"}

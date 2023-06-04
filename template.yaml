@@ -7,7 +7,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Runtime: java8
-      Handler: com.test.APIDemoHandler::handleRequest
+#      Handler: com.test.APIDemoHandler::handleRequest
+      Handler: com.test.LambdaFunctionRequestHandler::handleRequest
       Timeout: 60
       MemorySize: 512
       CodeUri: ./target/sample-project.jar

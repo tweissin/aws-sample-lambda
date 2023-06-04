@@ -31,7 +31,11 @@ public class APIDemoHandler implements RequestStreamHandler {
             responseBody.addProperty("message", "New item created");
 
             JsonObject headerJson = new JsonObject();
-            headerJson.addProperty("x-custom-header", "my custom header value");
+//            headerJson.addProperty("x-custom-header", "my custom header value");
+            headerJson.addProperty("Access-Control-Allow-Origin", "*");// for CORS
+//            headerJson.addProperty("Access-Control-Allow-Credentials", "true");// for CORS
+//            headerJson.addProperty("Access-Control-Allow-Headers", "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token");// for CORS
+            headerJson.addProperty("Content-Type", "application/json");
 
             responseJson.addProperty("statusCode", 200);
             responseJson.add("headers", headerJson);
